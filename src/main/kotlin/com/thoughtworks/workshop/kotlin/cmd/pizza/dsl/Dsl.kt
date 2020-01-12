@@ -12,6 +12,14 @@ class CheeseBurst {
     }
 }
 
+class Just {
+    companion object {
+        infix fun farmhouse(pizza: Pizza): Pizza {
+            return pizza
+        }
+    }
+}
+
 fun pizza(action: PizzaBuilder.() -> Unit): Pizza {
     val pizzaBuilder = PizzaBuilder()
     pizzaBuilder.action()
