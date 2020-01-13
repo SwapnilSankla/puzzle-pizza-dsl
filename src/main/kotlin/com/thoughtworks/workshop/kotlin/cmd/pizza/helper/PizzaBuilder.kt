@@ -8,10 +8,7 @@ class PizzaBuilder {
     var topped: MutableList<String> = mutableListOf()
 
     fun build(): Pizza {
-        var pizza: Pizza = FarmHouse()
-        for (i in 0 until topped.size) {
-            pizza = Topping(pizza, topped[i])
-        }
-        return pizza
+        val startWith: Pizza = FarmHouse()
+        return topped.fold(startWith) { pizza, topping -> Topping(pizza, topping) }
     }
 }
