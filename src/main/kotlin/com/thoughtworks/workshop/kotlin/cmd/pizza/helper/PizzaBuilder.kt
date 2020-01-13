@@ -7,8 +7,5 @@ import com.thoughtworks.workshop.kotlin.pizza.Topping
 class PizzaBuilder {
     var topped: MutableList<String> = mutableListOf()
 
-    fun build(): Pizza {
-        val startWith: Pizza = FarmHouse()
-        return topped.fold(startWith) { pizza, topping -> Topping(pizza, topping) }
-    }
+    fun build() = topped.fold(FarmHouse()) { pizza: Pizza, topping -> Topping(pizza, topping) }
 }
