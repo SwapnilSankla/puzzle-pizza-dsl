@@ -20,9 +20,11 @@ class Just {
     }
 }
 
-fun pizza(action: PizzaBuilder.() -> Unit): Pizza {
+val pizza = PizzaBuilder().build()
+
+fun pizza(action: (PizzaBuilder.() -> Unit)): Pizza {
     val pizzaBuilder = PizzaBuilder()
-    pizzaBuilder.action()
+    action.let { pizzaBuilder.it() }
     return pizzaBuilder.build()
 }
 

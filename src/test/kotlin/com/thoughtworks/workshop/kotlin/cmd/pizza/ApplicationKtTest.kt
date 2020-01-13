@@ -5,7 +5,6 @@ import com.thoughtworks.workshop.kotlin.cmd.pizza.dsl.Just
 import com.thoughtworks.workshop.kotlin.cmd.pizza.dsl.description
 import com.thoughtworks.workshop.kotlin.cmd.pizza.dsl.pizza
 import com.thoughtworks.workshop.kotlin.cmd.pizza.helper.with
-import com.thoughtworks.workshop.kotlin.pizza.FarmHouse
 import com.thoughtworks.workshop.kotlin.pizza.Pizza
 import io.kotlintest.shouldBe
 import org.junit.jupiter.api.Test
@@ -31,7 +30,6 @@ class ApplicationKtTest {
 
     @Test
     fun `should allow user to make pizza without additional toppings`() {
-        val pizza = FarmHouse()
         val cheeseBurstFarmHousePizza: Pizza = CheeseBurst farmhouse pizza
         cheeseBurstFarmHousePizza.description() shouldBe "A Farm House pizza with Cheese burst, topped with [Onion, Tomato, Mashroom] and priced at 250.0"
     }
