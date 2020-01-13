@@ -6,17 +6,13 @@ import com.thoughtworks.workshop.kotlin.pizza.Pizza
 
 class CheeseBurst {
     companion object {
-        infix fun farmhouse(pizza: Pizza): Pizza {
-            return Dough(pizza, "Cheese burst", 50.0)
-        }
+        infix fun farmhouse(pizza: Pizza) = Dough(pizza, "Cheese burst", 50.0)
     }
 }
 
 class Just {
     companion object {
-        infix fun farmhouse(pizza: Pizza): Pizza {
-            return pizza
-        }
+        infix fun farmhouse(pizza: Pizza) = pizza
     }
 }
 
@@ -28,7 +24,5 @@ fun pizza(action: (PizzaBuilder.() -> Unit)): Pizza {
     return pizzaBuilder.build()
 }
 
-fun Pizza.description(): String {
-    return "A $name pizza with $dough, topped with $toppings and priced at $price"
-}
+fun Pizza.description() = "A $name pizza with $dough, topped with $toppings and priced at $price"
 
